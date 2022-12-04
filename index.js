@@ -8,9 +8,9 @@ const port = process.env.PORT || 5000;
 const router = require("./routers/router.js");
 
 // middlewares
+app.use(cors());
 app.use(express.json());
 app.use("/", router);
-app.use(cors());
 
 // db connect
 mangoose.connect(process.env.MONGO_DB_URL, () => {
